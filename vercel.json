@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/wa/:digits",
+      "destination": "https://wa.me/:digits",
+      "permanent": false
+    }
+  ]
+}
