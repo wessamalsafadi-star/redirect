@@ -1,7 +1,7 @@
 // api/wa/[digits].js
 const WEBHOOK_URL = 'https://engageteam.app.n8n.cloud/webhook/fff658f2-df95-4970-a32e-775e4895cd4c';
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { digits, ...query } = req.query;
 
   await fetch(WEBHOOK_URL, {
@@ -20,4 +20,5 @@ export default async function handler(req, res) {
   }).catch(() => {});
 
   const qs = new URLSearchParams(query).toString();
-  res.redirect(302,
+  res.redirect(302, `https://wa.me/${digits}${qs ? '?' + qs : ''}`);
+};
