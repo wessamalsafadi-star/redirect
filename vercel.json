@@ -1,9 +1,6 @@
+// vercel.json
 {
-  "redirects": [
-    {
-      "source": "/wa/:digits",
-      "destination": "https://wa.me/:digits",
-      "permanent": false
-    }
+  "rewrites": [
+    { "source": "/wa/:digits", "destination": "/api/wa/:digits" }
   ]
 }
